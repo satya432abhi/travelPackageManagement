@@ -46,16 +46,17 @@ public class Main {
         PassengerInterface satyam = new StandardPassenger("Satyam", 1, 100.0);
         PassengerInterface rohit = new GoldPassenger("Rohit", 2, 150.0);
         PassengerInterface shivam = new PremiumPassenger("Shivam", 3);
-        
+
+        // Add passengers to the travel package
+        adventurePackage.addPassenger(satyam);
+        adventurePackage.addPassenger(rohit);
+        // Attempt to add more passengers than the capacity
+        adventurePackage.addPassenger(shivam); 
+            
         // Sign up passenger for Activity
         satyam.signUpForActivity(cityTourActivity);
         rohit.signUpForActivity(hikingActivity);
         shivam.signUpForActivity(museumActivity);
-        
-        // Add passengers to the travel package
-        adventurePackage.addPassenger(satyam);
-        adventurePackage.addPassenger(rohit);
-        adventurePackage.addPassenger(shivam); // Attempt to add more passengers than the capacity
 
         // Display information
         PrintItineraryService.printItinerary(adventurePackage);
